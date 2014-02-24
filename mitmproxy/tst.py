@@ -8,7 +8,6 @@ This was only entertainment!!
 
 import random
 import hashlib
-import pprint
 
 from libmproxy import proxy, flow
 
@@ -39,12 +38,10 @@ class SpotifyProxy(flow.FlowMaster):
         return f
 
 config = proxy.ProxyConfig()
+print vars(config)
 state = flow.State()
 server = proxy.ProxyServer(config, 9000)
 m = SpotifyProxy(server, state)
-
-pprint.pprint(globals())
-pprint.pprint(locals())
 
 m.run()
 
